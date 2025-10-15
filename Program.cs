@@ -6,7 +6,9 @@ namespace ÄffarsModelDemo
     {
         static void Main(string[] args)
         {
+            
             ButikManager butikM = new ButikManager();
+            butikM.LaddaKunder();
             bool run = true;
             while (run)
             {
@@ -45,7 +47,7 @@ namespace ÄffarsModelDemo
                                         butikM.VisaKundvagn(inlogningKund);
                                         break;
                                     case 3:
-                                        butikM.Kassa(inlogningKund);
+                                        butikM.Kassa(ref inlogningKund);
                                         break;
                                     case 4:
 
@@ -70,6 +72,9 @@ namespace ÄffarsModelDemo
                         break;
                     case "3":
                         run = false;
+                        break;
+                    default:
+                        Console.WriteLine("Fel val, försök igen");
                         break;
                 }
 

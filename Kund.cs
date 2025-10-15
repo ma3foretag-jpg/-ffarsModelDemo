@@ -11,7 +11,7 @@ namespace ÄffarsModelDemo
         public string Name { get; private set; }
         public string Lösenord { get; private set; }
 
-        public double TotalKöp { get;  set; } = 0;
+        
 
         public List<Produkt> Kundvagn;
 
@@ -54,7 +54,12 @@ namespace ÄffarsModelDemo
             return KundInfo;
         }
 
-        
+        public virtual double Rabatt()
+        {
+            //den heter lambada och genom att använda sum() metoden som är en del av LINQ-biblioteket
+            //kan man enkelt beräkna summan av priserna för alla produkter i kundvagnen.
+            return Kundvagn.Sum(p => p.TotalPrice());
+        }
 
 
 
@@ -64,7 +69,11 @@ namespace ÄffarsModelDemo
 
 
 
-    }
+
+
+
+
+        }
 }
 
     

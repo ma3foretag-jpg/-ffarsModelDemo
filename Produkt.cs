@@ -14,16 +14,14 @@ namespace ÄffarsModelDemo
         public int Antal { get; set; }
 
 
-        public Produkt(string name, int preis )
+        public Produkt(string name, int preis, int antal )
         {
             Name = name;
             Preis = preis;
-           
-        }
-        public Produkt()
-        {
+            Antal = antal;
 
         }
+        
 
         public double TotalPrice()
         {

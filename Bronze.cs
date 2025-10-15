@@ -8,12 +8,16 @@ namespace ÄffarsModelDemo
 {
     public class Bronze : Kund
     {
-        private double rabatt = 0.15;
+        
         public Bronze(string name, string lösenord) : base(name, lösenord)
         {
 
         }
 
-
+        public override double Rabatt()
+        {
+            double total = base.Rabatt();
+            return total * 0.95;
+        }
     }
 }
